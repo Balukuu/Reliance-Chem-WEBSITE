@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve | Reliance Chemicals Ltd</title>
+  <meta name="description" content="From soap factories to water treatment plants &mdash; Reliance Chemicals supplies the essential chemicals that keep Uganda's industries running smoothly.">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="logo-img"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="industries.html" class="active">Industries</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="contact.html" class="btn btn-orange">Request Quote</a>
+      </div>
+      <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <button class="mobile-drawer-close"><i class="fa-solid fa-times"></i></button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="industries.html" class="active">Industries</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero" style="padding-bottom: 120px;">
+    <div class="hero-overlay"></div>
+    <div class="container" style="position: relative; z-index: 2" data-aos="fade-up">
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; margin: 0 8px; color: rgba(255,255,255,0.4);"></i>
+        <span style="color: var(--blue); font-weight: 600;">Industries</span>
+      </div>
+      <h1>Industries We Serve</h1>
+      <p class="hero-subtitle">From soap manufacturing to municipal water sanitation, we supply the premium chemical inputs keeping East African industries productive.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Industry Hub -->
+  <section class="section section-white" style="margin-top: -60px; position: relative; z-index: 10; padding-top: 0;">
+    <div class="container">
+      
+      <!-- Interactive Real-time Search Input -->
+      <div class="search-filter-wrapper" style="max-width: 650px; margin: 0 auto 3.5rem auto; position: relative;" data-aos="fade-up" data-aos-delay="100">
+        <div class="search-box" style="position: relative; display: flex; align-items: center;">
+          <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 24px; color: var(--blue); font-size: 1.15rem;"></i>
+          <input type="text" id="industrySearch" placeholder="Looking for a raw material? Search chemicals (e.g. Caustic, Acid, Soda)..." style="width: 100%; padding: 22px 24px 22px 64px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.08); background: var(--white); box-shadow: 0 15px 35px rgba(15, 30, 58, 0.06); font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; outline: none; transition: all 0.4s ease;">
+        </div>
+      </div>
+
+      <!-- Sector Tabs Slider -->
+      <div class="sector-tabs-container" data-aos="fade-up" data-aos-delay="200">
+        <button class="sector-tab active" data-sector="soap">
+          <i class="fa-solid fa-soap"></i>
+          <span>Soap & Detergent</span>
+        </button>
+        <button class="sector-tab" data-sector="food">
+          <i class="fa-solid fa-wheat-awn"></i>
+          <span>Food & Beverage</span>
+        </button>
+        <button class="sector-tab" data-sector="water">
+          <i class="fa-solid fa-droplet"></i>
+          <span>Water Treatment</span>
+        </button>
+        <button class="sector-tab" data-sector="paint">
+          <i class="fa-solid fa-paint-roller"></i>
+          <span>Paint & Coatings</span>
+        </button>
+        <button class="sector-tab" data-sector="beauty">
+          <i class="fa-solid fa-spa"></i>
+          <span>Beauty & Cosmetics</span>
+        </button>
+        <button class="sector-tab" data-sector="rubber">
+          <i class="fa-solid fa-industry"></i>
+          <span>Rubber & Adhesives</span>
+        </button>
+        <button class="sector-tab" data-sector="sugar">
+          <i class="fa-solid fa-cow"></i>
+          <span>Sugar & Dairy</span>
+        </button>
+        <button class="sector-tab" data-sector="clean">
+          <i class="fa-solid fa-broom"></i>
+          <span>Industrial Cleaning</span>
+        </button>
+        <button class="sector-tab" data-sector="pharma">
+          <i class="fa-solid fa-flask-vial"></i>
+          <span>Pharmaceuticals</span>
+        </button>
+      </div>
+
+      <!-- Sector Content Panels -->
+      <div class="sector-panels-wrapper" style="margin-top: 30px;">
+        
+        <!-- Panel 1: Soap & Detergent -->
+        <div class="sector-panel active" id="soap" data-aos="fade-up">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Soap & Detergent</span>
+              <h2>Empowering Detergent & Soap Manufacturing</h2>
+              <p>We supply the core raw materials for manufacturers of bar soaps, liquid detergents, and laundry powders. Our chemicals ensure strong cleaning action, stable formulation, and cost efficiency.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Caustic Soda</span>
+                <span class="sector-prod-tag">SLES & LABSA</span>
+                <span class="sector-prod-tag">Soda Ash</span>
+                <span class="sector-prod-tag">Sodium Silicate</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1607006342411-92fc0a417893?q=80&w=1200" alt="Soap Manufacturing Ingredients" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-check-double"></i>
+                <span>Premium Quality Inputs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Food & Beverage -->
+        <div class="sector-panel" id="food">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Food & Beverage</span>
+              <h2>Purity Assured Food-Grade Ingredients</h2>
+              <p>Delivering high-purity, food-grade chemicals essential for food processing, preservation, and beverage manufacturing. We prioritize safety and regulatory compliance.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Corn Starch & Dextrose</span>
+                <span class="sector-prod-tag">Citric & Phosphoric Acid</span>
+                <span class="sector-prod-tag">Sodium Benzoate</span>
+                <span class="sector-prod-tag">Sodium Bicarbonate</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?q=80&w=1200" alt="Food Processing Starch Ingredients" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>100% Food Grade Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Water Treatment -->
+        <div class="sector-panel" id="water">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Water Treatment</span>
+              <h2>Ensuring Clean Water & Safe Municipalities</h2>
+              <p>Providing the chemicals needed for large-scale water purification, municipal sanitation, and industrial wastewater treatment to ensure clean, safe water supplies.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Aluminum Sulphate</span>
+                <span class="sector-prod-tag">Chlorine 65%</span>
+                <span class="sector-prod-tag">Hydrochloric Acid</span>
+                <span class="sector-prod-tag">Sodium Hypochlorite</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?q=80&w=1200" alt="Water Treatment Filtration Plant" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-droplet"></i>
+                <span>Sanitation Compliant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Paint & Coatings -->
+        <div class="sector-panel" id="paint">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Paint & Coatings</span>
+              <h2>Superior Resins, Solvents & Coatings</h2>
+              <p>Our solvents and resins support the production of high-quality decorative paints, industrial coatings, and protective finishes, ensuring durability and excellent finish.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Alkid Resin</span>
+                <span class="sector-prod-tag">Ethyl & Butyl Acetate</span>
+                <span class="sector-prod-tag">Thinners & Solvents</span>
+                <span class="sector-prod-tag">Toluene & Xylene</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200" alt="Paint Resins Coatings Mixtures" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-brush"></i>
+                <span>Industrial Resiliency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 5: Beauty & Cosmetics -->
+        <div class="sector-panel" id="beauty">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Beauty & Cosmetics</span>
+              <h2>Base Ingredients & French Perfume Concentrates</h2>
+              <p>We supply high-grade base ingredients and fine fragrance concentrates used in the formulation of cosmetics, skincare, and premium personal care products.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">White Oil</span>
+                <span class="sector-prod-tag">Paraffin & Micro Wax</span>
+                <span class="sector-prod-tag">Glycerin</span>
+                <span class="sector-prod-tag">Perfume Concentrates (France)</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=1200" alt="Glistening Cosmetics Oils Raw Materials" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-heart"></i>
+                <span>Cosmetic Grade Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 6: Rubber & Adhesives -->
+        <div class="sector-panel" id="rubber">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Rubber & Adhesives</span>
+              <h2>Intermediates & Industrial Solvents</h2>
+              <p>Essential solvents and chemical intermediates that enable the efficient manufacturing of rubber products, industrial adhesives, and bonding agents.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Acetone</span>
+                <span class="sector-prod-tag">Toluene</span>
+                <span class="sector-prod-tag">Xylene</span>
+                <span class="sector-prod-tag">Methanol</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=1200" alt="Laboratory Scientific Fluid Rubber Polymers" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-bolt"></i>
+                <span>High Bond Strength</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 7: Sugar & Dairy -->
+        <div class="sector-panel" id="sugar">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Sugar & Dairy</span>
+              <h2>Processing Aids for Agro-Processing</h2>
+              <p>Supporting critical processing stages in the sugar refining and dairy production industries with specialized processing aids and cleaning chemicals.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Lime</span>
+                <span class="sector-prod-tag">Phosphoric Acid</span>
+                <span class="sector-prod-tag">Nitric Acid</span>
+                <span class="sector-prod-tag">Industrial Salt</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?q=80&w=1200" alt="Agro Processing Facilities Sugar Cane Dairy Inputs" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-cow"></i>
+                <span>Agro-Process Approved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 8: Industrial Cleaning -->
+        <div class="sector-panel" id="clean">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Industrial Cleaning</span>
+              <h2>Heavy Duty Industrial Surfactants & Cleaners</h2>
+              <p>Providing powerful acids, bases, and surfactants necessary for heavy-duty cleaning formulations used in factories, institutions, and commercial spaces.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Sulphuric Acid</span>
+                <span class="sector-prod-tag">Hydrochloric Acid</span>
+                <span class="sector-prod-tag">Caustic Soda</span>
+                <span class="sector-prod-tag">Hydrogen Peroxide</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200" alt="Industrial Cleaning Surfactant Formulations" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-shield-virus"></i>
+                <span>Deep Formulation Grade</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 9: Pharmaceuticals -->
+        <div class="sector-panel" id="pharma">
+          <div class="sector-panel-grid">
+            <div class="sector-text">
+              <span class="label label-blue">Pharmaceuticals</span>
+              <h2>Stringent Purity Pharma Solvents</h2>
+              <p>Supplying high-purity solvents and processing aids that meet the stringent requirements of pharmaceutical manufacturing and laboratory environments.</p>
+              
+              <div class="sector-products-tags">
+                <span class="sector-prod-tag">Iso Propyl Alcohol (IPA)</span>
+                <span class="sector-prod-tag">Glycerin</span>
+                <span class="sector-prod-tag">Acetone</span>
+                <span class="sector-prod-tag">Methanol</span>
+              </div>
+            </div>
+            
+            <div class="sector-image-showcase">
+              <div class="sector-img-frame">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200" alt="Sterile Pharmaceutical Solvents Laboratory" loading="lazy">
+                <div class="sector-img-overlay"></div>
+              </div>
+              <div class="sector-floating-badge">
+                <i class="fa-solid fa-flask-vial"></i>
+                <span>Purity Compliance Standard</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner" data-aos="fade-up">
+    <div class="container">
+      <h2>Need Chemicals For Your Industry?</h2>
+      <p style="margin-bottom: 2rem">Get in touch with our team for bulk pricing and regular supply contracts.</p>
+      <a href="contact.html" class="btn btn-orange">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="nav-logo"><img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="logo-img"></a>
+          <p>Facilitating Chemical Evolution.</p>
+          <p>Supplying high-quality industrial chemicals to manufacturers across Uganda and East Africa.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Product Portfolio</a></li>
+            <li><a href="industries.html">Industries Served</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sectors</h4>
+          <ul>
+            <li><a href="industries.html">Soap & Detergent</a></li>
+            <li><a href="industries.html">Water Treatment</a></li>
+            <li><a href="industries.html">Food Processing</a></li>
+            <li><a href="industries.html">Beauty & Cosmetics</a></li>
+            <li><a href="industries.html">Paint & Coatings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul>
+            <li>Plot 37/39, P.O. Box 10706</li>
+            <li>5th Street Industrial Area</li>
+            <li>Kampala, Uganda</li>
+            <li style="margin-top: 1rem">+256 757 359427</li>
+            <li>+256 759 991298</li>
+            <li>sales@reliancechemicals.ug</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Reliance Chemicals Ltd &middot; Kampala, Uganda</div>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/256757359427?text=Hello%2C%20I%27m%20interested%20in%20sourcing%20from%20RCL" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-credit">
+        Designed &amp; developed by <a href="https://blactec.ug" target="_blank" rel="noopener">Blactec</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/256757359427?text=Hello%2C%20I%27m%20interested%20in%20sourcing%20from%20RCL" class="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <div class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
