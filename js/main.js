@@ -30,20 +30,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 2. Mobile Menu Drawer ---
+  // --- 2. Mobile Menu Drawer & Backdrop Overlay ---
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const mobileDrawer = document.querySelector('.mobile-drawer');
   const mobileDrawerClose = document.querySelector('.mobile-drawer-close');
+  const mobileOverlay = document.querySelector('.mobile-overlay');
 
   if (mobileMenuBtn && mobileDrawer) {
     mobileMenuBtn.addEventListener('click', () => {
       mobileDrawer.classList.add('open');
+      if (mobileOverlay) mobileOverlay.classList.add('open');
     });
   }
 
   if (mobileDrawerClose && mobileDrawer) {
     mobileDrawerClose.addEventListener('click', () => {
       mobileDrawer.classList.remove('open');
+      if (mobileOverlay) mobileOverlay.classList.remove('open');
+    });
+  }
+
+  if (mobileOverlay && mobileDrawer) {
+    mobileOverlay.addEventListener('click', () => {
+      mobileDrawer.classList.remove('open');
+      mobileOverlay.classList.remove('open');
     });
   }
 
@@ -52,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (mobileDrawer) mobileDrawer.classList.remove('open');
+      if (mobileOverlay) mobileOverlay.classList.remove('open');
     });
   });
 
@@ -149,38 +160,93 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 5c. Advanced Chemical Real-Time Search (Industries Page) ---
   const industrySearch = document.getElementById('industrySearch');
   const allProductTags = document.querySelectorAll('.sector-prod-tag');
+  const searchResultCount = document.getElementById('searchResultCount');
+  const sectorTabsList = document.querySelectorAll('.sector-tab');
 
   if (industrySearch && allProductTags.length > 0) {
     industrySearch.addEventListener('input', (e) => {
       const query = e.target.value.toLowerCase().trim();
 
-      // Reset all highlights
+      // Reset all highlights, active filters, and styling
       allProductTags.forEach(tag => tag.classList.remove('highlight-match'));
+      sectorTabsList.forEach(tab => {
+        tab.style.display = '';
+        tab.style.opacity = '';
+      });
 
-      if (query.length > 1) {
-        let firstMatchSector = null;
+      if (query.length < 2) {
+        if (searchResultCount) {
+          searchResultCount.style.display = 'none';
+          searchResultCount.textContent = '';
+        }
+        return;
+      }
 
-        allProductTags.forEach(tag => {
-          const text = tag.textContent.toLowerCase();
-          if (text.includes(query)) {
-            tag.classList.add('highlight-match');
+      let totalMatches = 0;
+      let firstMatchSector = null;
+      const matchingSectors = new Set();
 
-            // Find parent sector panel id
-            const parentPanel = tag.closest('.sector-panel');
-            if (parentPanel && !firstMatchSector) {
-              firstMatchSector = parentPanel.id;
+      // Check product tags
+      allProductTags.forEach(tag => {
+        const text = tag.textContent.toLowerCase();
+        if (text.includes(query)) {
+          tag.classList.add('highlight-match');
+          totalMatches++;
+
+          // Track matching sector
+          const parentPanel = tag.closest('.sector-panel');
+          if (parentPanel) {
+            matchingSectors.add(parentPanel.id);
+          }
+        }
+      });
+
+      // Check sector names in tabs
+      sectorTabsList.forEach(tab => {
+        const sectorId = tab.getAttribute('data-sector');
+        const tabText = tab.textContent.toLowerCase();
+        if (tabText.includes(query)) {
+          matchingSectors.add(sectorId);
+        }
+      });
+
+      // Update tabs display based on matches
+      if (matchingSectors.size > 0) {
+        sectorTabsList.forEach(tab => {
+          const sectorId = tab.getAttribute('data-sector');
+          if (matchingSectors.has(sectorId)) {
+            tab.style.opacity = '1';
+            if (!firstMatchSector) {
+              firstMatchSector = sectorId;
             }
+          } else {
+            tab.style.opacity = '0.35'; // Fade out non-matching categories
           }
         });
 
         // Switch to the first sector tab that matches the query!
         if (firstMatchSector) {
-          // Find matching tab button
           const matchingTab = document.querySelector(`.sector-tab[data-sector="${firstMatchSector}"]`);
           if (matchingTab && !matchingTab.classList.contains('active')) {
-            // Click the matching tab to swap!
             matchingTab.click();
           }
+        }
+      } else {
+        // Fade all tabs if absolutely no match is found
+        sectorTabsList.forEach(tab => {
+          tab.style.opacity = '0.35';
+        });
+      }
+
+      // Display real-time result count badge
+      if (searchResultCount) {
+        searchResultCount.style.display = 'inline-block';
+        if (totalMatches === 0 && matchingSectors.size === 0) {
+          searchResultCount.innerHTML = `<i class="fa-solid fa-circle-info" style="margin-right: 6px;"></i> No matching chemicals found`;
+        } else if (totalMatches === 1) {
+          searchResultCount.innerHTML = `<i class="fa-solid fa-circle-check" style="margin-right: 6px; color: var(--blue);"></i> 1 chemical match found`;
+        } else {
+          searchResultCount.innerHTML = `<i class="fa-solid fa-circle-check" style="margin-right: 6px; color: var(--blue);"></i> ${totalMatches} chemical matches found`;
         }
       }
     });
@@ -201,6 +267,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set select value
         const val = chip.getAttribute('data-value');
         hiddenCategorySelect.value = val;
+
+        // Clear any chip validation errors
+        const chipGroup = document.querySelector('.contact-chip-group');
+        const chipError = document.getElementById('chipError');
+        if (chipGroup && chipError) {
+          chipGroup.classList.remove('error');
+          chipError.style.display = 'none';
+        }
       });
     });
   }
@@ -209,29 +283,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
       // Basic client side check
       const inputs = contactForm.querySelectorAll('[required]');
+      const chipGroup = document.querySelector('.contact-chip-group');
+      const chipError = document.getElementById('chipError');
       let isValid = true;
+
       inputs.forEach(input => {
-        if (!input.value.trim()) {
-          isValid = false;
-          input.style.borderBottomColor = 'red';
+        if (input.id === 'category') {
+          if (!input.value) {
+            isValid = false;
+            if (chipGroup && chipError) {
+              chipGroup.classList.add('error');
+              chipError.style.display = 'block';
+            }
+          } else {
+            if (chipGroup && chipError) {
+              chipGroup.classList.remove('error');
+              chipError.style.display = 'none';
+            }
+          }
         } else {
-          input.style.borderBottomColor = 'var(--border-light)';
+          if (!input.value.trim()) {
+            isValid = false;
+            input.style.borderBottomColor = 'red';
+          } else {
+            input.style.borderBottomColor = 'var(--border-light)';
+          }
         }
       });
 
-      if (isValid) {
-        const successBanner = document.getElementById('formSuccessBanner');
-        if (successBanner) {
-          successBanner.style.display = 'block';
-        }
-        contactForm.reset();
-        setTimeout(() => {
-          if (successBanner) successBanner.style.display = 'none';
-        }, 5000);
+      if (!isValid) {
+        e.preventDefault();
+        return;
       }
+
+      e.preventDefault();
+      const successBanner = document.getElementById('formSuccessBanner');
+      if (successBanner) {
+        successBanner.style.display = 'block';
+      }
+      contactForm.reset();
+      
+      // Reset selected chips
+      if (contactChips.length > 0) {
+        contactChips.forEach(c => c.classList.remove('active'));
+      }
+      
+      setTimeout(() => {
+        if (successBanner) successBanner.style.display = 'none';
+      }, 5000);
     });
   }
 

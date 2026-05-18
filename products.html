@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <title>Products | Reliance Chemicals Ltd</title>
   <meta name="description" content="View the full product portfolio of Reliance Chemicals Ltd. We supply a wide range of industrial chemicals for soap, water treatment, food processing, and more.">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
@@ -42,14 +42,15 @@
     </div>
   </div>
 
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-overlay"></div>
+
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="hero-overlay"></div>
     <div class="container" style="position: relative; z-index: 2" data-aos="fade-up">
-      <div style="font-size: 0.9rem; color: var(--blue); margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em;">
-        Home <span style="color: var(--grey-text-light); margin: 0 5px;">/</span> Products
-      </div>
       <h1>Our Product Portfolio</h1>
+      <div class="page-hero-accent"></div>
     </div>
   </section>
 
@@ -80,49 +81,49 @@
             </tr>
           </thead>
           <tbody>
-            <tr data-category="Soap & Detergent"><td>1</td><td>Caustic Soda</td><td>Soap & Detergent</td><td>Soap & detergent base, pH control</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>2</td><td>SLES</td><td>Soap & Detergent</td><td>Foaming surfactant in liquid soaps</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>3</td><td>LABSA</td><td>Soap & Detergent</td><td>Anionic surfactant for detergents</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>4</td><td>Glycerin</td><td>Soap & Detergent</td><td>Moisturiser, humectant</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>5</td><td>Soda Ash</td><td>Soap & Detergent</td><td>Laundry powder base</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>6</td><td>Sodium Silicate</td><td>Soap & Detergent</td><td>Binder and filler</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>7</td><td>Talc</td><td>Soap & Detergent</td><td>Filler and coating</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Soap & Detergent"><td>8</td><td>STPP</td><td>Soap & Detergent</td><td>Detergent builder</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>1</td><td>Caustic Soda</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Soap & detergent base, pH control</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>2</td><td>SLES</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Foaming surfactant in liquid soaps</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>3</td><td>LABSA</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Anionic surfactant for detergents</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>4</td><td>Glycerin</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Moisturiser, humectant</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>5</td><td>Soda Ash</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Laundry powder base</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>6</td><td>Sodium Silicate</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Binder and filler</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>7</td><td>Talc</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Filler and coating</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Soap & Detergent"><td>8</td><td>STPP</td><td><span class="category-badge badge-soap">Soap & Detergent</span></td><td>Detergent builder</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
             
-            <tr data-category="Water Treatment"><td>9</td><td>Aluminum Sulphate</td><td>Water Treatment</td><td>Water coagulant</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Water Treatment"><td>10</td><td>Chlorine 65%</td><td>Water Treatment</td><td>Disinfection and sanitation</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Water Treatment"><td>11</td><td>Hydrochloric Acid</td><td>Water Treatment</td><td>pH adjustment, metal cleaning</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Water Treatment"><td>12</td><td>Hydrogen Peroxide</td><td>Water Treatment</td><td>Bleaching and disinfection</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Water Treatment"><td>13</td><td>Sulphuric Acid</td><td>Water Treatment</td><td>Industrial processing</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Water Treatment"><td>14</td><td>Sodium Hypochlorite</td><td>Water Treatment</td><td>Disinfectant and bleach</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Water Treatment"><td>15</td><td>Magadi Soda</td><td>Water Treatment</td><td>Water softening</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>9</td><td>Aluminum Sulphate</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>Water coagulant</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>10</td><td>Chlorine 65%</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>Disinfection and sanitation</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>11</td><td>Hydrochloric Acid</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>pH adjustment, metal cleaning</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>12</td><td>Hydrogen Peroxide</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>Bleaching and disinfection</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>13</td><td>Sulphuric Acid</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>Industrial processing</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>14</td><td>Sodium Hypochlorite</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>Disinfectant and bleach</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Water Treatment"><td>15</td><td>Magadi Soda</td><td><span class="category-badge badge-water">Water Treatment</span></td><td>Water softening</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
             
-            <tr data-category="Food Processing"><td>16</td><td>Corn Starch</td><td>Food Processing</td><td>Thickening agent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>17</td><td>Dextrose</td><td>Food Processing</td><td>Sugar substitute</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>18</td><td>Sodium Bicarbonate</td><td>Food Processing</td><td>Leavening, pH control</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>19</td><td>Sodium Benzoate</td><td>Food Processing</td><td>Food preservative</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>20</td><td>Citric Acid</td><td>Food Processing</td><td>Acidulant, flavour</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>21</td><td>Phosphoric Acid</td><td>Food Processing</td><td>Beverage acidulant</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>22</td><td>Nitric Acid</td><td>Food Processing</td><td>CIP cleaning</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>23</td><td>Industrial Salt</td><td>Food Processing</td><td>Preservation</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Food Processing"><td>24</td><td>Lime</td><td>Food Processing</td><td>Processing aid</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>16</td><td>Corn Starch</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Thickening agent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>17</td><td>Dextrose</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Sugar substitute</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>18</td><td>Sodium Bicarbonate</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Leavening, pH control</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>19</td><td>Sodium Benzoate</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Food preservative</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>20</td><td>Citric Acid</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Acidulant, flavour</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>21</td><td>Phosphoric Acid</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Beverage acidulant</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>22</td><td>Nitric Acid</td><td><span class="category-badge badge-food">Food Processing</span></td><td>CIP cleaning</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>23</td><td>Industrial Salt</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Preservation</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Food Processing"><td>24</td><td>Lime</td><td><span class="category-badge badge-food">Food Processing</span></td><td>Processing aid</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
             
-            <tr data-category="Beauty & Cosmetics"><td>25</td><td>White Oil</td><td>Beauty & Cosmetics</td><td>Emollient base</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Beauty & Cosmetics"><td>26</td><td>Paraffin Wax</td><td>Beauty & Cosmetics</td><td>Candles, lip balm, cosmetics</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Beauty & Cosmetics"><td>27</td><td>Micro Wax</td><td>Beauty & Cosmetics</td><td>Polishes, cosmetics</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Beauty & Cosmetics"><td>28</td><td>Perfume Concentrates</td><td>Beauty & Cosmetics</td><td>Fragrance manufacturing</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Beauty & Cosmetics"><td>25</td><td>White Oil</td><td><span class="category-badge badge-beauty">Beauty & Cosmetics</span></td><td>Emollient base</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Beauty & Cosmetics"><td>26</td><td>Paraffin Wax</td><td><span class="category-badge badge-beauty">Beauty & Cosmetics</span></td><td>Candles, lip balm, cosmetics</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Beauty & Cosmetics"><td>27</td><td>Micro Wax</td><td><span class="category-badge badge-beauty">Beauty & Cosmetics</span></td><td>Polishes, cosmetics</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Beauty & Cosmetics"><td>28</td><td>Perfume Concentrates</td><td><span class="category-badge badge-beauty">Beauty & Cosmetics</span></td><td>Fragrance manufacturing</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
             
-            <tr data-category="Paint & Coatings"><td>29</td><td>Alkid Resin</td><td>Paint & Coatings</td><td>Oil-based paint binder</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>30</td><td>Styrene Acrylic</td><td>Paint & Coatings</td><td>Emulsion paint binder</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>31</td><td>Ethyl Acetate</td><td>Paint & Coatings</td><td>Ink and coating solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>32</td><td>Butyl Acetate</td><td>Paint & Coatings</td><td>Paint and nail polish solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>33</td><td>Thinner</td><td>Paint & Coatings</td><td>Viscosity reducer</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>34</td><td>Acetone</td><td>Paint & Coatings</td><td>Solvent, cleaning</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>35</td><td>Toluene</td><td>Paint & Coatings</td><td>Paint and adhesive solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>36</td><td>Xylene</td><td>Paint & Coatings</td><td>Rubber and paint solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>37</td><td>Methanol</td><td>Paint & Coatings</td><td>Solvent and fuel additive</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>38</td><td>Butyl Glycol</td><td>Paint & Coatings</td><td>Waterborne paint coalescent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
-            <tr data-category="Paint & Coatings"><td>39</td><td>Iso Propyl Alcohol</td><td>Paint & Coatings</td><td>Cleaning, antiseptic, cosmetics</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>29</td><td>Alkid Resin</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Oil-based paint binder</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>30</td><td>Styrene Acrylic</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Emulsion paint binder</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>31</td><td>Ethyl Acetate</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Ink and coating solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>32</td><td>Butyl Acetate</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Paint and nail polish solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>33</td><td>Thinner</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Viscosity reducer</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>34</td><td>Acetone</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Solvent, cleaning</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>35</td><td>Toluene</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Paint and adhesive solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>36</td><td>Xylene</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Rubber and paint solvent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>37</td><td>Methanol</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Solvent and fuel additive</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>38</td><td>Butyl Glycol</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Waterborne paint coalescent</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
+            <tr data-category="Paint & Coatings"><td>39</td><td>Iso Propyl Alcohol</td><td><span class="category-badge badge-paint">Paint & Coatings</span></td><td>Cleaning, antiseptic, cosmetics</td><td><a href="contact.html" class="btn btn-orange table-btn">Enquire &rarr;</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -232,7 +233,7 @@
   <div class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.0"></script>
 </body>
 </html>
 

@@ -6,7 +6,7 @@
   <title>Contact Us | Reliance Chemicals Ltd</title>
   <meta name="description" content="Get in touch with Reliance Chemicals Ltd. Request a quote, ask a question, or visit our office in Kampala's Industrial Area.">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
@@ -42,16 +42,16 @@
     </div>
   </div>
 
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-overlay"></div>
+
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="hero-overlay"></div>
     <div class="container" style="position: relative; z-index: 2" data-aos="fade-up">
-      <div class="hero-breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; margin: 0 8px; color: rgba(255,255,255,0.4);"></i>
-        <span style="color: var(--blue); font-weight: 600;">Contact</span>
-      </div>
+
       <h1>Get in Touch</h1>
+      <div class="page-hero-accent"></div>
       <p class="hero-subtitle">Partner with RCL for raw chemical sourcing. Our technical sales team is ready to answer your inquiries within 24 hours.</p>
     </div>
   </section>
@@ -143,6 +143,9 @@
               <div class="contact-chip" data-value="Beauty & Cosmetics">Beauty & Cosmetics</div>
               <div class="contact-chip" data-value="Paint & Coatings">Paint & Coatings</div>
               <div class="contact-chip" data-value="Other">Other</div>
+            </div>
+            <div id="chipError" style="color: #ef4444; font-size: 0.85rem; font-weight: 600; margin-top: -10px; margin-bottom: 10px; display: none;">
+              <i class="fa-solid fa-circle-exclamation" style="margin-right: 4px;"></i> Please select a sourcing sector.
             </div>
 
             <div class="grid-2" style="gap: 20px; grid-template-columns: 1fr 1fr;">
@@ -262,6 +265,6 @@
   <div class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.0"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <title>About Us | Reliance Chemicals Ltd &mdash; Kampala, Uganda</title>
   <meta name="description" content="Learn about Reliance Chemicals Ltd, the leading B2B chemical supplier in Kampala, Uganda. Our mission, values, and dedication to industrial excellence.">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
@@ -42,16 +42,16 @@
     </div>
   </div>
 
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-overlay"></div>
+
   <!-- Page Hero -->
   <section class="page-hero">
     <div class="hero-overlay"></div>
     <div class="container" style="position: relative; z-index: 2" data-aos="fade-up">
-      <div class="hero-breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; margin: 0 8px; color: rgba(255,255,255,0.4);"></i>
-        <span style="color: var(--blue); font-weight: 600;">About</span>
-      </div>
+
       <h1>Our Legacy in Chemistry</h1>
+      <div class="page-hero-accent"></div>
       <p class="hero-subtitle">Driving Industrial Growth Across Uganda & East Africa since 2010.</p>
     </div>
   </section>
@@ -154,6 +154,69 @@
         </div>
       </div>
     </section>
+
+    <!-- How We Work Process Section -->
+    <section class="section section-light" style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="container">
+        <div class="text-center mb-4" data-aos="fade-up">
+          <span class="label label-blue">Our Operation</span>
+          <h2>How We Work</h2>
+          <p style="max-width: 600px; margin: 1rem auto 0; color: #64748B;">From global sourcing to Kampala warehousing and delivery, we verify quality at every single step.</p>
+        </div>
+        
+        <div class="process-grid">
+          <!-- Step 1 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="0">
+            <span class="process-step-num">01</span>
+            <div class="process-card-icon-wrapper">
+              <i class="fa-solid fa-clipboard-question"></i>
+            </div>
+            <h4>Understand Needs</h4>
+            <p>Technical audit of your chemical formulations and required volumes.</p>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="process-step-num">02</span>
+            <div class="process-card-icon-wrapper">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <h4>Source Globally</h4>
+            <p>Direct sourcing from certified international chemical manufacturers.</p>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="process-step-num">03</span>
+            <div class="process-card-icon-wrapper">
+              <i class="fa-solid fa-vial-circle-check"></i>
+            </div>
+            <h4>Quality Verify</h4>
+            <p>Strict lab verification for chemical purity and compliance.</p>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="process-step-num">04</span>
+            <div class="process-card-icon-wrapper">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <h4>Kampala Warehouse</h4>
+            <p>Safe storage in our modern 5th Street Industrial Area hub.</p>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="400">
+            <span class="process-step-num">05</span>
+            <div class="process-card-icon-wrapper">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <h4>Deliver On-Time</h4>
+            <p>Direct to your factory door with our dedicated logistics fleet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -218,11 +281,8 @@
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <!-- CountUp JS as ES module fallback or global -->
-  <script type="module">
-    import { CountUp } from 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.min.js';
-    window.countUp = { CountUp };
-  </script>
-  <script src="js/main.js"></script>
+  <!-- CountUp JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
+  <script src="js/main.js?v=2.0"></script>
 </body>
 </html>

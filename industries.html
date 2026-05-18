@@ -6,7 +6,7 @@
   <title>Industries We Serve | Reliance Chemicals Ltd</title>
   <meta name="description" content="From soap factories to water treatment plants &mdash; Reliance Chemicals supplies the essential chemicals that keep Uganda's industries running smoothly.">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
@@ -42,22 +42,22 @@
     </div>
   </div>
 
+  <!-- Mobile Overlay Backdrop -->
+  <div class="mobile-overlay"></div>
+
   <!-- Page Hero -->
-  <section class="page-hero" style="padding-bottom: 120px;">
+  <section class="page-hero">
     <div class="hero-overlay"></div>
     <div class="container" style="position: relative; z-index: 2" data-aos="fade-up">
-      <div class="hero-breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; margin: 0 8px; color: rgba(255,255,255,0.4);"></i>
-        <span style="color: var(--blue); font-weight: 600;">Industries</span>
-      </div>
+
       <h1>Industries We Serve</h1>
+      <div class="page-hero-accent"></div>
       <p class="hero-subtitle">From soap manufacturing to municipal water sanitation, we supply the premium chemical inputs keeping East African industries productive.</p>
     </div>
   </section>
 
   <!-- Interactive Industry Hub -->
-  <section class="section section-white" style="margin-top: -60px; position: relative; z-index: 10; padding-top: 0;">
+  <section class="section section-white" style="position: relative; z-index: 10;">
     <div class="container">
       
       <!-- Interactive Real-time Search Input -->
@@ -66,6 +66,7 @@
           <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 24px; color: var(--blue); font-size: 1.15rem;"></i>
           <input type="text" id="industrySearch" placeholder="Looking for a raw material? Search chemicals (e.g. Caustic, Acid, Soda)..." style="width: 100%; padding: 22px 24px 22px 64px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.08); background: var(--white); box-shadow: 0 15px 35px rgba(15, 30, 58, 0.06); font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; outline: none; transition: all 0.4s ease;">
         </div>
+        <div id="searchResultCount" class="search-result-count" style="display: none;"></div>
       </div>
 
       <!-- Sector Tabs Slider -->
@@ -129,7 +130,7 @@
             
             <div class="sector-image-showcase">
               <div class="sector-img-frame">
-                <img src="https://images.unsplash.com/photo-1607006342411-92fc0a417893?q=80&w=1200" alt="Soap Manufacturing Ingredients" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=1200" alt="Soap Manufacturing Ingredients" loading="lazy">
                 <div class="sector-img-overlay"></div>
               </div>
               <div class="sector-floating-badge">
@@ -446,6 +447,6 @@
   <div class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.0"></script>
 </body>
 </html>
