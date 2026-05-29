@@ -61,12 +61,54 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Placeholder image for hero bg -->
-    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop" alt="Industrial Chemistry" class="hero-bg" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1563784462386-044fd95e9852?q=80&w=2000&auto=format&fit=crop" alt="Industrial Chemistry" class="hero-bg" loading="lazy">
     <div class="hero-overlay"></div>
+    
+    <!-- Ambient Glows -->
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <!-- Floating Chemical Molecules -->
+    <div class="hero-molecule hero-molecule-1">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 10L100 33.1V79.4L60 102.5L20 79.4V33.1L60 10Z" stroke="rgba(26, 107, 245, 0.25)" stroke-width="2"/>
+        <path d="M60 20L91.3 38.1V74.4L60 92.5L28.7 74.4V38.1L60 20Z" stroke="rgba(26, 107, 245, 0.15)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <circle cx="60" cy="10" r="4" fill="var(--blue)"/>
+        <circle cx="100" cy="33.1" r="4" fill="var(--blue)"/>
+        <circle cx="100" cy="79.4" r="4" fill="var(--blue)"/>
+        <circle cx="60" cy="102.5" r="4" fill="var(--blue)"/>
+        <circle cx="20" cy="79.4" r="4" fill="var(--blue)"/>
+        <circle cx="20" cy="33.1" r="4" fill="var(--blue)"/>
+      </svg>
+    </div>
+    <div class="hero-molecule hero-molecule-2">
+      <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 15L120 43.9V101.7L70 130.6L20 101.7V43.9L70 15Z" stroke="rgba(240, 90, 34, 0.25)" stroke-width="2"/>
+        <circle cx="70" cy="15" r="4.5" fill="var(--orange)"/>
+        <circle cx="120" cy="43.9" r="4.5" fill="var(--orange)"/>
+        <circle cx="20" cy="101.7" r="4.5" fill="var(--orange)"/>
+        <path d="M66 26.5L111 52.5" stroke="rgba(240, 90, 34, 0.2)" stroke-width="1.5"/>
+        <path d="M25 96.5V49.5" stroke="rgba(240, 90, 34, 0.2)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="hero-molecule hero-molecule-3">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 8L66 23v30L40 68L14 53v-30L40 8Z" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <circle cx="40" cy="8" r="3" fill="#ffffff"/>
+        <circle cx="66" cy="53" r="3" fill="#ffffff"/>
+        <circle cx="14" cy="23" r="3" fill="#ffffff"/>
+      </svg>
+    </div>
+    
     <div class="container hero-content" data-aos="fade-up">
+      <div class="hero-logo-container">
+        <img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="hero-logo-img">
+      </div>
       <span class="label label-orange">[ INDUSTRIAL CHEMICALS &middot; KAMPALA, UGANDA ]</span>
-      <h1>Facilitating Chemical Evolution</h1>
+      <h1 class="hero-title">
+        <span class="hero-title-main">Reliance Chemicals</span>
+        <span class="hero-title-sub">Your Reliable Supply Partner</span>
+      </h1>
       <p class="hero-subline">Quality industrial chemicals &mdash; reliably sourced, competitively priced, delivered across East Africa.</p>
       
       <div class="hero-buttons">
@@ -75,9 +117,9 @@
       </div>
       
       <div class="hero-trust">
-        <span><i class="fa-solid fa-circle-check text-blue"></i> Quality Assured</span>
-        <span><i class="fa-solid fa-circle-check text-blue"></i> Prompt Delivery</span>
-        <span><i class="fa-solid fa-circle-check text-blue"></i> Competitive Pricing</span>
+        <span><i class="fa-solid fa-circle-check"></i> Quality Assured</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Prompt Delivery</span>
+        <span><i class="fa-solid fa-tags"></i> Competitive Pricing</span>
       </div>
     </div>
     <div class="scroll-indicator"><i class="fa-solid fa-chevron-down"></i></div>
@@ -91,7 +133,7 @@
         <div class="stat-label">YEARS EXPERIENCE</div>
       </div>
       <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="stat-number" data-count="500">0</div>
+        <div class="stat-number" data-count="200">0</div>
         <div class="stat-label">PRODUCTS PORTFOLIO</div>
       </div>
       <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
@@ -513,10 +555,10 @@
       <p style="margin-bottom: 2rem">Send us your requirements. Our team responds within 24 hours.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap;">
         <a href="contact.html" class="btn btn-orange">Request a Quote</a>
-        <a href="tel:+256757359427" class="btn btn-ghost-white">Call Us Now</a>
+        <a href="tel:+256759767766" class="btn btn-ghost-white">Call Us Now</a>
       </div>
       <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8)">
-        sales@reliancechemicals.ug &middot; +256 757 359427
+        hello@reliancechemicals.ug &middot; +256 759 767766
       </div>
     </div>
   </section>
@@ -527,7 +569,7 @@
       <div class="footer-grid">
         <div>
           <a href="index.html" class="nav-logo"><img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="logo-img"></a>
-          <p>Facilitating Chemical Evolution.</p>
+          <p>Your Reliable Supply Partner.</p>
           <p>Supplying high-quality industrial chemicals to manufacturers across Uganda and East Africa.</p>
         </div>
         <div>
@@ -553,12 +595,11 @@
         <div>
           <h4>Contact Us</h4>
           <ul>
-            <li>Plot 37/39, P.O. Box 10706</li>
-            <li>5th Street Industrial Area</li>
+            <li>Plot 34/36, P.O. Box 10706</li>
+            <li>Kibira Road, Industrial Area</li>
             <li>Kampala, Uganda</li>
-            <li style="margin-top: 1rem">+256 757 359427</li>
-            <li>+256 759 991298</li>
-            <li>sales@reliancechemicals.ug</li>
+            <li style="margin-top: 1rem">+256 759 767766</li>
+            <li>hello@reliancechemicals.ug</li>
           </ul>
         </div>
       </div>
@@ -566,7 +607,7 @@
         <div>&copy; 2026 Reliance Chemicals Ltd &middot; Kampala, Uganda</div>
         <div class="social-icons">
           <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://wa.me/256757359427?text=Hello%2C%20I%27m%20interested%20in%20sourcing%20from%20RCL" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/256759767766?text=Hello%2C%20I%27m%20interested%20in%20sourcing%20from%20RCL" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-credit">
@@ -576,7 +617,7 @@
   </footer>
 
   <!-- Floating Elements -->
-  <a href="https://wa.me/256757359427?text=Hello%2C%20I%27m%20interested%20in%20sourcing%20from%20RCL" class="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <a href="https://wa.me/256759767766?text=Hello%2C%20I%27m%20interested%20in%20sourcing%20from%20RCL" class="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
   <div class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></div>
