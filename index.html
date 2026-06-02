@@ -17,11 +17,13 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="nav-logo"><img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="logo-img"></a>
-      
+
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
@@ -34,12 +36,12 @@
         <a href="contact.html" class="btn btn-orange">Request Quote</a>
       </div>
 
-      <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+      <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </nav>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-drawer">
+  <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobile-drawer-header">
       <a href="index.html" class="nav-logo"><img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="logo-img"></a>
       <button class="mobile-drawer-close" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
@@ -60,69 +62,48 @@
   <div class="mobile-overlay"></div>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1563784462386-044fd95e9852?q=80&w=2000&auto=format&fit=crop" alt="Industrial Chemistry" class="hero-bg" loading="lazy">
-    <div class="hero-overlay"></div>
-    
+  <section class="hero" id="main-content">
     <!-- Ambient Glows -->
-    <div class="hero-glow-1"></div>
-    <div class="hero-glow-2"></div>
-    
-    <!-- Floating Chemical Molecules -->
-    <div class="hero-molecule hero-molecule-1">
-      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M60 10L100 33.1V79.4L60 102.5L20 79.4V33.1L60 10Z" stroke="rgba(26, 107, 245, 0.25)" stroke-width="2"/>
-        <path d="M60 20L91.3 38.1V74.4L60 92.5L28.7 74.4V38.1L60 20Z" stroke="rgba(26, 107, 245, 0.15)" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <circle cx="60" cy="10" r="4" fill="var(--blue)"/>
-        <circle cx="100" cy="33.1" r="4" fill="var(--blue)"/>
-        <circle cx="100" cy="79.4" r="4" fill="var(--blue)"/>
-        <circle cx="60" cy="102.5" r="4" fill="var(--blue)"/>
-        <circle cx="20" cy="79.4" r="4" fill="var(--blue)"/>
-        <circle cx="20" cy="33.1" r="4" fill="var(--blue)"/>
-      </svg>
-    </div>
-    <div class="hero-molecule hero-molecule-2">
-      <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M70 15L120 43.9V101.7L70 130.6L20 101.7V43.9L70 15Z" stroke="rgba(240, 90, 34, 0.25)" stroke-width="2"/>
-        <circle cx="70" cy="15" r="4.5" fill="var(--orange)"/>
-        <circle cx="120" cy="43.9" r="4.5" fill="var(--orange)"/>
-        <circle cx="20" cy="101.7" r="4.5" fill="var(--orange)"/>
-        <path d="M66 26.5L111 52.5" stroke="rgba(240, 90, 34, 0.2)" stroke-width="1.5"/>
-        <path d="M25 96.5V49.5" stroke="rgba(240, 90, 34, 0.2)" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <div class="hero-molecule hero-molecule-3">
-      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 8L66 23v30L40 68L14 53v-30L40 8Z" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
-        <circle cx="40" cy="8" r="3" fill="#ffffff"/>
-        <circle cx="66" cy="53" r="3" fill="#ffffff"/>
-        <circle cx="14" cy="23" r="3" fill="#ffffff"/>
-      </svg>
-    </div>
-    
-    <div class="container hero-content" data-aos="fade-up">
-      <div class="hero-logo-container">
-        <img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="hero-logo-img">
-      </div>
-      <span class="label label-orange">[ INDUSTRIAL CHEMICALS &middot; KAMPALA, UGANDA ]</span>
-      <h1 class="hero-title">
-        <span class="hero-title-main">Reliance Chemicals</span>
-        <span class="hero-title-sub">Your Reliable Supply Partner</span>
-      </h1>
-      <p class="hero-subline">Quality industrial chemicals &mdash; reliably sourced, competitively priced, delivered across East Africa.</p>
-      
-      <div class="hero-buttons">
-        <a href="products.html" class="btn btn-blue">Explore Products</a>
-        <a href="contact.html" class="btn btn-orange">Request a Quote</a>
+    <div class="hero-glow-1" aria-hidden="true"></div>
+    <div class="hero-glow-2" aria-hidden="true"></div>
+
+    <!-- Floating/Bouncing Lab & Chemical Icons -->
+    <div class="hero-floating-icon icon-flask" aria-hidden="true"><i class="fa-solid fa-flask"></i></div>
+    <div class="hero-floating-icon icon-vial" aria-hidden="true"><i class="fa-solid fa-vial"></i></div>
+    <div class="hero-floating-icon icon-atom" aria-hidden="true"><i class="fa-solid fa-atom"></i></div>
+    <div class="hero-floating-icon icon-dna" aria-hidden="true"><i class="fa-solid fa-dna"></i></div>
+    <div class="hero-floating-icon icon-microscope" aria-hidden="true"><i class="fa-solid fa-microscope"></i></div>
+    <div class="hero-floating-icon icon-droplet" aria-hidden="true"><i class="fa-solid fa-droplet"></i></div>
+
+    <div class="container hero-container" data-aos="fade-up">
+      <div class="hero-text-col">
+        <h1 class="hero-title">
+          <span class="hero-title-main">Industrial Chemicals,</span>
+          <span class="hero-title-sub">Reliably Delivered.</span>
+        </h1>
+
+        <p class="hero-subline">Uganda's trusted chemical supply partner &mdash; quality sourced globally, delivered across East Africa with precision and speed.</p>
+
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-hero-white" id="hero-explore-btn">Explore Products &rarr;</a>
+          <a href="contact.html" class="btn btn-hero-outline" id="hero-quote-btn">Request a Quote <i class="fa-solid fa-phone"></i></a>
+        </div>
+
+        <div class="hero-trust">
+          <span><i class="fa-solid fa-circle-check"></i> Quality Assured</span>
+          <span><i class="fa-solid fa-truck-fast"></i> Prompt Delivery</span>
+          <span><i class="fa-solid fa-tags"></i> Competitive Pricing</span>
+          <span><i class="fa-solid fa-globe"></i> Global Sourcing</span>
+        </div>
       </div>
       
-      <div class="hero-trust">
-        <span><i class="fa-solid fa-circle-check"></i> Quality Assured</span>
-        <span><i class="fa-solid fa-truck-fast"></i> Prompt Delivery</span>
-        <span><i class="fa-solid fa-tags"></i> Competitive Pricing</span>
+      <div class="hero-img-col">
+        <div class="hero-img-wrapper">
+          <img src="images/hero_chemical_supply.png" alt="Reliance Chemicals Industrial Supply Beaker" class="hero-main-img">
+        </div>
       </div>
     </div>
-    <div class="scroll-indicator"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="scroll-indicator" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></div>
   </section>
 
   <!-- Stats Bar -->
@@ -182,7 +163,7 @@
         <a href="about.html" class="about-learn-more">Learn More about RCL <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="about-image-container" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" alt="Warehouse storage" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1200&auto=format&fit=crop" alt="Chemical laboratory" loading="lazy">
         <div class="about-stats-badge">
           <i class="fa-solid fa-award"></i>
           <div>

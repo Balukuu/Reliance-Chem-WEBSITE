@@ -2,6 +2,83 @@
  * Reliance Chemicals Ltd - Main JavaScript
  */
 
+// --- Hero Particle Canvas Animation ---
+(function initHeroCanvas() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    canvas.style.display = 'none';
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); });
+
+  const colors = ['rgba(0,212,240,', 'rgba(26,107,245,', 'rgba(160,100,255,', 'rgba(100,220,180,'];
+  const NUM = 55;
+  const MAX_DIST = 160;
+
+  const particles = Array.from({ length: NUM }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.45,
+    vy: (Math.random() - 0.5) * 0.45,
+    r: Math.random() * 2.2 + 0.8,
+    color: colors[Math.floor(Math.random() * colors.length)]
+  }));
+
+  let animFrameId;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+    });
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MAX_DIST) {
+          const alpha = (1 - dist / MAX_DIST) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = particles[i].color + alpha + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + '0.75)';
+      ctx.fill();
+    });
+    animFrameId = requestAnimationFrame(draw);
+  }
+  draw();
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      cancelAnimationFrame(animFrameId);
+    } else {
+      draw();
+    }
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   
   // --- 1. Sticky Navbar & Scroll-to-Top ---
@@ -36,34 +113,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileDrawerClose = document.querySelector('.mobile-drawer-close');
   const mobileOverlay = document.querySelector('.mobile-overlay');
 
-  if (mobileMenuBtn && mobileDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileDrawer.classList.add('open');
-      if (mobileOverlay) mobileOverlay.classList.add('open');
-    });
+  function openDrawer() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.add('open');
+    if (mobileOverlay) mobileOverlay.classList.add('open');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    if (mobileDrawerClose) mobileDrawerClose.focus();
   }
 
-  if (mobileDrawerClose && mobileDrawer) {
-    mobileDrawerClose.addEventListener('click', () => {
-      mobileDrawer.classList.remove('open');
-      if (mobileOverlay) mobileOverlay.classList.remove('open');
-    });
+  function closeDrawer() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.remove('open');
+    if (mobileOverlay) mobileOverlay.classList.remove('open');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    if (mobileMenuBtn) mobileMenuBtn.focus();
   }
 
-  if (mobileOverlay && mobileDrawer) {
-    mobileOverlay.addEventListener('click', () => {
-      mobileDrawer.classList.remove('open');
-      mobileOverlay.classList.remove('open');
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openDrawer);
+  if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeDrawer);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  if (mobileDrawer) {
+    mobileDrawer.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = mobileDrawer.querySelectorAll('a[href], button:not([disabled])');
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
   }
 
   // Close drawer on link click
   const mobileLinks = document.querySelectorAll('.mobile-drawer .nav-links a');
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (mobileDrawer) mobileDrawer.classList.remove('open');
-      if (mobileOverlay) mobileOverlay.classList.remove('open');
-    });
+    link.addEventListener('click', closeDrawer);
   });
 
   // --- 3. Initialize AOS Animations ---

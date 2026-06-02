@@ -12,6 +12,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
@@ -26,12 +28,12 @@
       <div class="nav-right">
         <a href="contact.html" class="btn btn-orange">Request Quote</a>
       </div>
-      <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+      <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </nav>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-drawer">
+  <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobile-drawer-header">
       <a href="index.html" class="nav-logo"><img src="reliance_logo_transparent.png" alt="Reliance Chemicals Logo" class="logo-img"></a>
       <button class="mobile-drawer-close" aria-label="Close menu"><i class="fa-solid fa-times"></i></button>
@@ -52,7 +54,7 @@
   <div class="mobile-overlay"></div>
 
   <!-- Page Hero -->
-  <section class="page-hero">
+  <section class="page-hero" id="main-content">
     <div class="hero-overlay"></div>
     <div class="container" style="position: relative; z-index: 2" data-aos="fade-up">
 
@@ -156,22 +158,22 @@
 
             <div class="grid-2" style="gap: 20px; grid-template-columns: 1fr 1fr;">
               <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder=" " required>
+                <input type="text" class="form-control" id="name" placeholder=" " required autocomplete="name">
                 <label for="name" class="form-label">Your Name *</label>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="company" placeholder=" ">
+                <input type="text" class="form-control" id="company" placeholder=" " autocomplete="organization">
                 <label for="company" class="form-label">Company Name</label>
               </div>
             </div>
             
             <div class="grid-2" style="gap: 20px; grid-template-columns: 1fr 1fr;">
               <div class="form-group">
-                <input type="tel" class="form-control" id="phone" placeholder=" " required>
+                <input type="tel" class="form-control" id="phone" placeholder=" " required autocomplete="tel">
                 <label for="phone" class="form-label">Phone Number *</label>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder=" " required>
+                <input type="email" class="form-control" id="email" placeholder=" " required autocomplete="email">
                 <label for="email" class="form-label">Email Address *</label>
               </div>
             </div>
