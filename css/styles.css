@@ -1368,20 +1368,19 @@ img {
    ========================================================================== */
 /* Stats Bar */
 .stats-bar {
-  background: linear-gradient(135deg, rgba(4, 12, 30, 0.98) 0%, rgba(6, 18, 44, 0.98) 100%);
-  border-top: 1px solid rgba(0, 200, 220, 0.18);
-  border-bottom: 1px solid rgba(0, 200, 220, 0.10);
-  padding: 50px 0;
+  background: #07112B;
+  border-top: 1px solid rgba(26, 107, 245, 0.2);
+  border-bottom: 1px solid rgba(26, 107, 245, 0.08);
+  padding: 64px 0;
   position: relative;
   overflow: hidden;
 }
 .stats-bar::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(0, 180, 220, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(26, 107, 245, 0.06) 0%, transparent 60%);
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 28px 28px;
   pointer-events: none;
 }
 .stats-grid {
@@ -1392,30 +1391,72 @@ img {
   position: relative;
 }
 .stat-item {
-  padding: 20px;
-  border-right: 1px solid rgba(0, 200, 220, 0.12);
+  padding: 32px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.stat-item:last-child {
-  border-right: none;
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 12%;
+  height: 76%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(26, 107, 245, 0.3) 28%,
+    rgba(26, 107, 245, 0.3) 72%,
+    transparent 100%
+  );
+}
+.stat-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(26, 107, 245, 0.1);
+  border: 1px solid rgba(26, 107, 245, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--blue);
+  margin-bottom: 1.4rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  flex-shrink: 0;
+}
+.stat-item:hover .stat-icon-box,
+.glass-stat-item:hover .stat-icon-box {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 28px rgba(26, 107, 245, 0.28);
+  border-color: var(--blue);
 }
 .stat-number {
   font-family: var(--font-heading);
   font-size: 3.2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00d4f0 0%, #1A6BF5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  filter: none;
   line-height: 1;
-  margin-bottom: 0.6rem;
-  filter: drop-shadow(0 0 20px rgba(0, 180, 220, 0.25));
+  margin-bottom: 0.55rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 24px rgba(26, 107, 245, 0.2);
 }
 .stat-label {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  color: rgba(180, 200, 220, 0.7);
-  letter-spacing: 0.1em;
-  font-weight: 600;
+  font-size: 0.82rem;
+  color: rgba(160, 185, 218, 0.85);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  text-transform: none;
+  line-height: 1.4;
 }
 
 /* About Strip Redesign */
@@ -2150,10 +2191,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   border-color: #E2E8F0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
-.section-light .industries-grid, .section-white .industries-grid {
-  background-color: #E2E8F0;
-  border-color: #E2E8F0;
-}
 .section-light .table-wrapper, .section-white .table-wrapper {
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -2201,9 +2238,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .mobile-menu-btn { display: block; }
   .grid-2, .grid-3, .products-grid, .industries-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat-item { border-right: none; border-bottom: 1px solid rgba(0, 200, 220, 0.12); }
-  .stat-item:nth-child(2n) { border-right: none; }
+  .stat-item:nth-child(-n+2) { border-bottom: 1px solid rgba(26, 107, 245, 0.15); }
   .stat-item:last-child { border-bottom: none; }
+  .stat-item:nth-child(2n)::after { display: none; }
+  .stat-icon-box { width: 44px; height: 44px; font-size: 1.1rem; margin-bottom: 1rem; }
   .hero-buttons { flex-direction: column; }
   .hero-trust { flex-direction: column; gap: 10px; }
   h1 { font-size: 2.5rem; }
@@ -2344,62 +2382,78 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   100% { transform: translateY(-8px); }
 }
 
-/* Glassmorphic Stats Section */
+/* Stats Card — About Page */
 .glass-stats-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  background: rgba(15, 30, 58, 0.6);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 0;
+  background: #07112B;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(26, 107, 245, 0.2);
   border-radius: 24px;
-  padding: 50px 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  margin-top: -30px;
+  padding: 40px 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(26, 107, 245, 0.06);
+  margin-top: -20px;
   position: relative;
   z-index: 10;
 }
 .glass-stat-item {
   position: relative;
   text-align: center;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .glass-stat-item:not(:last-child)::after {
   content: '';
   position: absolute;
-  top: 15%;
   right: 0;
-  height: 70%;
+  top: 12%;
+  height: 76%;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(26, 107, 245, 0.3) 28%,
+    rgba(26, 107, 245, 0.3) 72%,
+    transparent 100%
+  );
 }
 .glass-stat-item h3 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--blue);
-  text-shadow: 0 0 20px rgba(26, 107, 245, 0.2);
-  margin-bottom: 0.3rem;
+  color: #FFFFFF;
+  text-shadow: 0 2px 24px rgba(26, 107, 245, 0.2);
+  margin-bottom: 0.45rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
 }
 .glass-stat-item p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
+  font-size: 0.82rem;
+  color: rgba(160, 185, 218, 0.85);
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-weight: 500;
   margin: 0;
+  line-height: 1.4;
 }
 
-/* Responsive Overlapping Layout */
+/* Responsive — About Stats Card */
 @media (max-width: 1024px) {
   .glass-stats-container {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 0;
-    padding: 40px 20px;
+    padding: 32px 8px;
   }
-  .glass-stat-item:nth-child(2)::after {
-    display: none;
-  }
+  /* In 2-col: hide ::after on even items (right column) */
+  .glass-stat-item:nth-child(2n)::after { display: none; }
+  /* Add row separator between top and bottom rows */
+  .glass-stat-item:nth-child(-n+2) { border-bottom: 1px solid rgba(26, 107, 245, 0.14); }
+  .glass-stat-item .stat-icon-box { width: 44px; height: 44px; font-size: 1.1rem; margin-bottom: 1rem; }
+  .glass-stat-item h3 { font-size: 2.8rem; }
 }
 @media (max-width: 768px) {
   .about-showcase-grid {
@@ -2421,11 +2475,15 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 @media (max-width: 480px) {
   .glass-stats-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 4px;
   }
-  .glass-stat-item::after {
-    display: none;
-  }
+  .glass-stat-item::after { display: none; }
+  .glass-stat-item:nth-child(2n)::after { display: none; }
+  .glass-stat-item:nth-child(-n+2) { border-bottom: 1px solid rgba(26, 107, 245, 0.14); }
+  .glass-stat-item .stat-icon-box { width: 36px; height: 36px; font-size: 0.95rem; margin-bottom: 0.75rem; border-radius: 10px; }
+  .glass-stat-item h3 { font-size: 2rem; }
+  .glass-stat-item p { font-size: 0.75rem; }
 }
 
 /* ==========================================================================
@@ -2694,6 +2752,168 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 /* ==========================================================================
+   Industries Card Grid Layout
+   ========================================================================== */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.industry-card {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 30, 58, 0.04);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(15, 30, 58, 0.1);
+  border-color: rgba(26, 107, 245, 0.12);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(26, 107, 245, 0.05), rgba(240, 90, 34, 0.05));
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.industry-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--blue);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 8px 20px rgba(26, 107, 245, 0.25);
+  transition: all 0.35s ease;
+}
+
+.industry-card:hover .card-badge {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 12px 30px rgba(26, 107, 245, 0.35);
+}
+
+.card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.card-tag {
+  display: inline-block;
+  background: rgba(26, 107, 245, 0.06);
+  border: 1px solid rgba(26, 107, 245, 0.15);
+  color: var(--blue);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.card-tag:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.card-badge-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(26, 107, 245, 0.04);
+  border: 1px solid rgba(26, 107, 245, 0.1);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue);
+  width: fit-content;
+}
+
+.card-badge-text i {
+  font-size: 1rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card-content {
+    padding: 24px;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .industry-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ==========================================================================
    Ultra-Premium Contact Page Overrides
    ========================================================================== */
 
@@ -2867,6 +3087,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .principle-card:hover,
   .process-card:hover,
   .about-feature-card:hover { transform: none; }
+  .stat-item:hover .stat-icon-box,
+  .glass-stat-item:hover .stat-icon-box { transform: none; box-shadow: none; }
 }
 
 /* Mobile (≤768px) — primary breakpoint */
@@ -2951,6 +3173,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   /* Stats */
   .stats-bar { padding: 24px 0; }
   .stat-number { font-size: 2.1rem; }
+  .stat-icon-box { width: 38px; height: 38px; font-size: 1rem; margin-bottom: 0.85rem; border-radius: 10px; }
 
   /* CTA */
   .cta-banner { padding: 52px 0; }
