@@ -2842,6 +2842,166 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 
 /* ==========================================================================
+   Mobile Responsiveness — Enhanced
+   ========================================================================== */
+
+/* Tablet (769px–1024px) touch-ups */
+@media (max-width: 1024px) {
+  .about-strip { gap: 48px; }
+  .cta-banner { padding: 88px 0; }
+}
+
+/* Touch tap-state feedback (all mobile) */
+@media (hover: none) and (pointer: coarse) {
+  .btn:active { opacity: 0.82; transform: scale(0.97); }
+  .sector-tab:active { opacity: 0.8; }
+  .filter-tab:active { opacity: 0.8; }
+  .fragrance-chip:active { background-color: var(--blue); color: var(--white); }
+  .contact-chip:active { background-color: var(--blue); color: var(--white); border-color: var(--blue); }
+  .new-industry-card:active .new-industry-overlay {
+    background: linear-gradient(to top, rgba(26, 107, 245, 0.85) 0%, rgba(4, 8, 17, 0.55) 55%, rgba(4, 8, 17, 0) 100%);
+  }
+  /* Disable hover lift-transforms on touch to prevent stuck states */
+  .card:hover,
+  .why-card:hover,
+  .principle-card:hover,
+  .process-card:hover,
+  .about-feature-card:hover { transform: none; }
+}
+
+/* Mobile (≤768px) — primary breakpoint */
+@media (max-width: 768px) {
+  /* Reduce vertical rhythm site-wide */
+  :root { --section-padding: 52px; }
+
+  /* Override hardcoded inline grid-template-columns on form rows */
+  .grid-2 { grid-template-columns: 1fr !important; }
+
+  /* Headings */
+  h2 { font-size: clamp(1.65rem, 5vw, 2.1rem); }
+  .page-hero h1 { font-size: 2rem; }
+  .hero-subtitle { font-size: 1.05rem; }
+
+  /* Hero */
+  .hero-title { font-size: clamp(1.95rem, 6.5vw, 2.6rem) !important; }
+  .hero-subline { font-size: 1rem; }
+  .hero-buttons .btn { width: 100%; justify-content: center; }
+  .hero-trust span { width: 100%; }
+
+  /* Stats bar */
+  .stats-bar { padding: 36px 0; }
+  .stat-number { font-size: 2.6rem; }
+
+  /* CTA banner */
+  .cta-banner { padding: 68px 0; }
+
+  /* Cards */
+  .why-card { padding: 26px 20px; }
+  .principle-card { padding: 26px 20px; }
+
+  /* About */
+  .about-strip { gap: 36px; }
+  .about-feature-card { padding: 14px 14px; }
+  .about-stats-badge { max-width: 220px; padding: 12px 14px; }
+
+  /* Contact form card */
+  .contact-form-card { padding: 28px 20px; border-radius: 20px; }
+
+  /* Map */
+  .map-wrapper { height: 300px; border-radius: 20px; }
+
+  /* Product table */
+  .product-table th,
+  .product-table td { padding: 12px 10px; font-size: 0.9rem; }
+
+  /* Footer */
+  .footer { padding: 56px 0 28px; }
+
+  /* Floating buttons — tighter positioning */
+  .whatsapp-btn { right: 14px; bottom: 16px; width: 50px; height: 50px; font-size: 24px; }
+  .scroll-top  { right: 14px; bottom: 76px; }
+
+  /* Navbar pill on mobile */
+  .navbar.scrolled { width: calc(100% - 24px); }
+
+  /* Sector panel */
+  .sector-panel { padding: 28px 18px; border-radius: 18px; }
+
+  /* Contact info cards on contact page — stack icon+text tighter */
+  .contact-info-card { gap: 14px !important; }
+}
+
+/* Small phones (≤480px) — tightest breakpoint */
+@media (max-width: 480px) {
+  :root { --section-padding: 40px; }
+
+  /* Tighten container edge padding */
+  .container { padding: 0 16px; }
+
+  /* Headings */
+  h2 { font-size: 1.6rem; }
+  .hero-title { font-size: 1.85rem !important; line-height: 1.2 !important; }
+  .hero-subline { font-size: 0.95rem; }
+  .page-hero h1 { font-size: 1.75rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+
+  /* Hero */
+  .hero { padding: 100px 0 52px; }
+
+  /* Stats */
+  .stats-bar { padding: 24px 0; }
+  .stat-number { font-size: 2.1rem; }
+
+  /* CTA */
+  .cta-banner { padding: 52px 0; }
+
+  /* Contact form */
+  .contact-form-card { padding: 20px 14px; }
+
+  /* Map */
+  .map-wrapper { height: 250px; }
+
+  /* Product table — hide the category badge column; filter tabs already convey it */
+  .product-table th:nth-child(3),
+  .product-table td:nth-child(3) { display: none; }
+  .product-table th,
+  .product-table td { padding: 10px 8px; font-size: 0.82rem; }
+  .table-btn { padding: 5px 10px; font-size: 0.78rem; }
+
+  /* Industries image cards */
+  .new-industry-card { height: 260px; }
+
+  /* Cards */
+  .why-card,
+  .principle-card { padding: 22px 16px; }
+
+  /* About showcase — simplify layout for very small screens */
+  .about-showcase-grid {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .about-img-main { width: 100%; height: 220px; position: static; border-radius: 16px; }
+  .about-img-sub { display: none; }
+  .about-floating-pill {
+    position: static;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 12px;
+    animation: none;
+    transform: none;
+  }
+
+  /* Footer */
+  .footer { padding: 44px 0 20px; }
+
+  /* Sector panel */
+  .sector-panel { padding: 22px 14px; }
+}
+
+/* ==========================================================================
    Reduced Motion
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
