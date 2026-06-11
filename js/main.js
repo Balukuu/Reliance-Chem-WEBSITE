@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const endVal = parseInt(target.getAttribute('data-count'), 10);
           const suffix = target.getAttribute('data-suffix') || '';
           const counter = new countUp.CountUp(target, endVal, { 
-            duration: 2, 
+            duration: 1, 
             suffix: suffix,
             useEasing: true
           });
